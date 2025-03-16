@@ -1,17 +1,21 @@
 import sys
 
-sides_arr = []
 
-while True:
-    sides = list(map(int,sys.stdin.readline().rstrip().split(" ")))
-    sides_arr.append(sides)
-    if sides == [0,0,0]:
-        break
-for i in range(len(sides_arr)-1):
-    sides = sides_arr[i]
-    sides.sort()
+participants = int(sys.stdin.readline().rstrip())
+sizes = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+bundles = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+t_order = 0
+pen_order = []
 
-    if sides[0]**2 + sides[1]**2 == sides[2]**2:
-        print("right")
+
+for i in range(len(sizes)):
+    if sizes[i] <= bundles[0]:
+        t_order += 1
     else:
-        print("wrong")
+        t_order += sizes[i] // bundles[0] + 1
+
+pen_order.append(participants//bundles[1])
+pen_order.append(participants%bundles[1])
+
+print(t_order)
+print(" ".join(map(str,pen_order)))
