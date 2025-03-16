@@ -9,6 +9,8 @@ pen_order = []
 
 
 for i in range(len(sizes)):
+    if sizes[i] == 0:
+        continue
     if sizes[i] <= bundles[0]:
         t_order += 1
     else:
