@@ -1,15 +1,17 @@
 import sys
 
+sides_arr = []
 
-num_NM = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+while True:
+    sides = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+    sides_arr.append(sides)
+    if sides == [0,0,0]:
+        break
+for i in range(len(sides_arr)-1):
+    sides = sides_arr[i]
+    sides.sort()
 
-basket = [0] * num_NM[0]
-
-for i in range(num_NM[1]):
-    input_num = list(map(int,sys.stdin.readline().rstrip().split(" ")))
-    for j in range(input_num[0], input_num[1]+1):
-        if j != 0:
-            j -= 1
-        basket[j] = input_num[2]
-
-print(" ".join(map(str,basket)))
+    if sides[0]**2 + sides[1]**2 == sides[2]**2:
+        print("right")
+    else:
+        print("wrong")
