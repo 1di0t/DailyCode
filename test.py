@@ -1,6 +1,8 @@
 import sys
 
-num = int(sys.stdin.readline().strip())
-nums = list(map(int,list(sys.stdin.readline().strip())))
+num1 = sys.stdin.readline().strip()
+num2 = sys.stdin.readline().strip()
+num3 = sys.stdin.readline().strip()
 
-print(sum(nums))
+print(int(num1) + int(num2) - int(num3))
+print(int(num1 + num2) -int(num3))
