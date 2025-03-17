@@ -1,9 +1,6 @@
 import sys
 
-ids = list(map(int,sys.stdin.readline().rstrip().split(" ")))
-verify = 0
+num = int(sys.stdin.readline().rstrip())
 
-for i in range(len(ids)):
-    verify += ids[i] ** 2
-
-print(verify % 10)
+for i in range(num):
+    print(i+1)
