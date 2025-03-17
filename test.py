@@ -1,8 +1,12 @@
 import sys
 
-integer = list(map(int, sys.stdin.readline().rstrip().split(" ")))
+zero_one = list(map(int, sys.stdin.readline().rstrip().split(" ")))
 
-if integer[0] + integer[1] == integer[2]:
-    print("correct!")
-else:
-    print("wrong!")
+if zero_one[0] == zero_one[1] != zero_one[2] :
+    print("C")
+elif zero_one[0] == zero_one[2] != zero_one[1] :
+    print("B")
+elif zero_one[1] == zero_one[2] != zero_one[0] :
+    print("A")
+else: 
+    print("*")
