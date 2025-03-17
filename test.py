@@ -1,5 +1,6 @@
 import sys
 
-num = sys.stdin.readline().rstrip()
+string = sys.stdin.readline().strip()
+num = int(sys.stdin.readline().strip())
 
-print(ord(num))
+print(string[num-1])
