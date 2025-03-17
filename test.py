@@ -1,6 +1,6 @@
 import sys
 
-string = sys.stdin.readline().strip()
 num = int(sys.stdin.readline().strip())
+nums = list(map(int,list(sys.stdin.readline().strip())))
 
-print(string[num-1])
+print(sum(nums))
