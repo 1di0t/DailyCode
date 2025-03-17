@@ -1,9 +1,6 @@
 import sys
 
-chess = list(map(int,sys.stdin.readline().rstrip().split(" ")))
-chess_gudie = [1,1,2,2,2,8]
+price = int(sys.stdin.readline().rstrip())
 
-for i in range(len(chess)):
-    chess_gudie[i] = chess_gudie[i] - chess[i]
-
-print(" ".join(map(str,chess_gudie)))
+print(price*0.78)
+print(price*0.2*0.78+price*0.8)
