@@ -1,8 +1,16 @@
 import sys
 
-num1 = sys.stdin.readline().strip()
-num2 = sys.stdin.readline().strip()
-num3 = sys.stdin.readline().strip()
+pay, money1, money2 = map(int, sys.stdin.readline().rstrip().split(" "))
+answer, pay_money = 0
 
-print(int(num1) + int(num2) - int(num3))
-print(int(num1 + num2) -int(num3))
+def change(pay, total):
+    global answer
+
+while pay <= pay_money:
+    n=0
+    while pay <= pay_money:
+    
+    n+=1
+    
+
+print(answer)
