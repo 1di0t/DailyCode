@@ -1,21 +1,21 @@
 import sys
 
-id_arr = []
-no = []
-for i in range(28):
-    id_arr.append(int(sys.stdin.readline().rstrip()))
+def remove_duplicates(input_list):
+    result = []
+    for item in input_list:
+        if item not in result:
+            result.append(item)
+    return result
 
-id_arr.sort()
-id,comp_id = 0,1
-while comp_id < 31:
-    if id == 28:
-        no.append(comp_id)
-        break
-    elif comp_id == id_arr[id]:
-        id+=1
-    else:
-        no.append(comp_id)
-    comp_id+=1
-    
+num = int(sys.stdin.readline().rstrip())
+str_arr = []
 
-print(f"{min(no)}\n{max(no)}")
+for i in range(num):
+    buff = sys.stdin.readline().rstrip()
+    str_arr.append([len(buff),buff])
+
+str_arr = remove_duplicates(str_arr)
+str_arr.sort()
+
+for i in range(len(str_arr)):
+    print(str_arr[i][1])
