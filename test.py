@@ -1,10 +1,6 @@
-num_arr = []
-answer = 1
-for i in range(3):
-    num_arr.append(int(input()))
+def factorial_recursive(num):
+    if (num <= 1): return 1
+    return num * factorial_recursive(num-1)
 
-for i in range(len(num_arr)):
-    answer *= num_arr[i]
-
-for i in range(10):
-    print(str(answer).count(str(i)))
+num = int(input())
+print(factorial_recursive(num))
