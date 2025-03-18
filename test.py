@@ -1,4 +1,6 @@
 
 string_arr = input().strip().split(" ")
-
-print(len(string_arr))
+if '' in string_arr:
+    print(0)
+else:
+    print(len(string_arr))
