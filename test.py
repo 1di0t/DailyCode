@@ -7,15 +7,15 @@ for i in range(28):
 
 id_arr.sort()
 id,comp_id = 0,1
-while True:
-    if id_arr[id] != comp_id:
+while comp_id < 31:
+    if id == 28:
         no.append(comp_id)
-    else:
-        id+=1
-    comp_id+=1
-    if id > 26:
         break
+    elif comp_id == id_arr[id]:
+        id+=1
+    else:
+        no.append(comp_id)
+    comp_id+=1
     
 
-print(min(no))
-print(max(no))
+print(f"{min(no)}\n{max(no)}")
