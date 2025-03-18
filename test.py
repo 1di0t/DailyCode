@@ -4,9 +4,8 @@ id_arr = []
 no = []
 for i in range(28):
     id_arr.append(int(sys.stdin.readline().rstrip()))
-print("here1")
+
 id_arr.sort()
-print("here2")
 id,comp_id = 0,1
 while True:
     if id_arr[id] != comp_id:
