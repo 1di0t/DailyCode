@@ -1,6 +1,10 @@
+num_arr = []
+answer = 1
+for i in range(3):
+    num_arr.append(int(input()))
 
-string_arr = input().strip().split(" ")
-if '' in string_arr:
-    print(0)
-else:
-    print(len(string_arr))
+for i in range(len(num_arr)):
+    answer *= num_arr[i]
+
+for i in range(10):
+    print(str(answer).count(str(i)))
