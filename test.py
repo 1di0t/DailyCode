@@ -1,15 +1,14 @@
 import sys
 
-def check_sort(arr):
-    if arr == sorted(arr):
-        return "ascending"
-    elif arr == sorted(arr, reverse=True):
-        return "descending"
-    else:
-        return "mixed"
+num = []
+answer = 0
 
-music = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+for i in range(10):
+    num.append(int(sys.stdin.readline().rstrip())%42)
 
-print(check_sort(music))
-
+num = sorted(num)
+for i in range(9):
+    if num[i] != num[i+1]:
+        answer += 1
         
+print(answer+1)
