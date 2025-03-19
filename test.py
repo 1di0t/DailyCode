@@ -1,21 +1,14 @@
 import sys
 
-def remove_duplicates(input_list):
-    result = []
-    for item in input_list:
-        if item not in result:
-            result.append(item)
-    return result
-
 num = int(sys.stdin.readline().rstrip())
 str_arr = []
+for i in range(num):
+    str_arr.append(list(sys.stdin.readline().rstrip().split(" ")))
+    str_arr[i][1] = list(str_arr[i][1])
+
 
 for i in range(num):
-    buff = sys.stdin.readline().rstrip()
-    str_arr.append([len(buff),buff])
-
-str_arr = remove_duplicates(str_arr)
-str_arr.sort()
-
-for i in range(len(str_arr)):
-    print(str_arr[i][1])
+    for l in range(len(str_arr[i][1])):
+        for r in range(int(str_arr[i][0])):
+            print(str_arr[i][1][l], end="")
+    print()
