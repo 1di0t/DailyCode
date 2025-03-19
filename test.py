@@ -1,14 +1,20 @@
 import sys
 
-num = []
-answer = 0
+def check_score(arr):
+    score,each = 0,0
+    for i in range(len(arr)):
+        if arr[i] == 'O':
+            each += 1
+            score += each
+        else:
+            each = 0
+    return score
 
-for i in range(10):
-    num.append(int(sys.stdin.readline().rstrip())%42)
+num = int(sys.stdin.readline().rstrip())
+ans_arr = []
 
-num = sorted(num)
-for i in range(9):
-    if num[i] != num[i+1]:
-        answer += 1
-        
-print(answer+1)
+for i in range(num):
+    ans_arr.append(list(sys.stdin.readline().rstrip()))
+
+for i in range(num):
+    print(check_score(ans_arr[i]))
