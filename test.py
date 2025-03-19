@@ -1,20 +1,13 @@
 import sys
 
-def check_score(arr):
-    score,each = 0,0
-    for i in range(len(arr)):
-        if arr[i] == 'O':
-            each += 1
-            score += each
-        else:
-            each = 0
-    return score
+str = (list(sys.stdin.readline().rstrip()))
+comp_arr = []
 
-num = int(sys.stdin.readline().rstrip())
-ans_arr = []
+for i in range(97, 123):
+    comp_arr.append(chr(i))
 
-for i in range(num):
-    ans_arr.append(list(sys.stdin.readline().rstrip()))
-
-for i in range(num):
-    print(check_score(ans_arr[i]))
+for i in range(len(comp_arr)):
+    if comp_arr[i] in str:
+        print(str.index(comp_arr[i]), end=' ')
+    else:
+        print(-1, end=' ')
