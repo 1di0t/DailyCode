@@ -1,14 +1,15 @@
 import sys
 
-num = int(sys.stdin.readline().rstrip())
-str_arr = []
-for i in range(num):
-    str_arr.append(list(sys.stdin.readline().rstrip().split(" ")))
-    str_arr[i][1] = list(str_arr[i][1])
+def check_sort(arr):
+    if arr == sorted(arr):
+        return "ascending"
+    elif arr == sorted(arr, reverse=True):
+        return "descending"
+    else:
+        return "mixed"
 
+music = list(map(int,sys.stdin.readline().rstrip().split(" ")))
 
-for i in range(num):
-    for l in range(len(str_arr[i][1])):
-        for r in range(int(str_arr[i][0])):
-            print(str_arr[i][1][l], end="")
-    print()
+print(check_sort(music))
+
+        
