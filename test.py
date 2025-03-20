@@ -1,23 +1,18 @@
 import sys
 
-number = int(sys.stdin.readline().rstrip())
-num_arr = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+number = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+cards = list(map(int,sys.stdin.readline().rstrip().split(" ")))
+buffer,answer=[],[]
+for i in range(number[0]):
+    for j in range(i+1,number[0]):
+        for k in range(j+1,number[0]):
+            sum= cards[i]+cards[j]+cards[k]
+            buffer.append(sum)
 
+for i in range(len(buffer)):
+    if number[1] < buffer[i]:
+        continue
+    else:
+        answer.append(buffer[i])
 
-def is_prime(n):
-    if n <= 1:
-        return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
-
-
-def count_prime(number,num_arr):
-    answer = 0
-    for i in range(number):
-        if is_prime(num_arr[i]):
-            answer += 1
-
-    return answer
-print(count_prime(number,num_arr))
+print(max(answer))
