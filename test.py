@@ -1,13 +1,23 @@
 import sys
 
-str = (list(sys.stdin.readline().rstrip()))
-comp_arr = []
+number = int(sys.stdin.readline().rstrip())
+num_arr = list(map(int,sys.stdin.readline().rstrip().split(" ")))
 
-for i in range(97, 123):
-    comp_arr.append(chr(i))
 
-for i in range(len(comp_arr)):
-    if comp_arr[i] in str:
-        print(str.index(comp_arr[i]), end=' ')
-    else:
-        print(-1, end=' ')
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+
+def count_prime(number,num_arr):
+    answer = 0
+    for i in range(number):
+        if is_prime(num_arr[i]):
+            answer += 1
+
+    return answer
+print(count_prime(number,num_arr))
