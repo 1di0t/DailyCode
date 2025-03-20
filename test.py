@@ -1,18 +1,17 @@
 import sys
 
-number = list(map(int,sys.stdin.readline().rstrip().split(" ")))
-cards = list(map(int,sys.stdin.readline().rstrip().split(" ")))
-buffer,answer=[],[]
-for i in range(number[0]):
-    for j in range(i+1,number[0]):
-        for k in range(j+1,number[0]):
-            sum= cards[i]+cards[j]+cards[k]
-            buffer.append(sum)
+number = int(sys.stdin.readline().rstrip())
+factorial = 1
+answer = 0
+for i in range(1, number+1):
+    factorial *= i
 
-for i in range(len(buffer)):
-    if number[1] < buffer[i]:
-        continue
+list_factorial = list(str(factorial))
+for i in range(len(list_factorial)-1, -1, -1):
+    if list_factorial[i] == '0':
+        answer += 1
     else:
-        answer.append(buffer[i])
+        break
+print(answer)
 
-print(max(answer))
+    
